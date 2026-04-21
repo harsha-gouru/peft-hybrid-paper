@@ -1,0 +1,1382 @@
+{
+  "run_id": "smoke_jamba_20260320_150724",
+  "model": "jamba",
+  "model_id": "ai21labs/AI21-Jamba-Reasoning-3B",
+  "ssm_type": "mamba",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "total_time_seconds": 5766.861317672,
+  "total_time_human": "96.1 minutes",
+  "config": {
+    "num_train": 50,
+    "num_test": 20,
+    "max_len": 128,
+    "batch_size": 4,
+    "num_epochs": 1,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lr": 0.0002,
+    "seeds": [
+      42,
+      123,
+      7
+    ]
+  },
+  "cl_results": [
+    {
+      "strategy": "lora_attention",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 499712,
+      "total_params": 3197609344,
+      "param_pct": "0.02%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 6.051653921054062,
+          "science": 12.768361978004336,
+          "conversation": 7.277150748631964,
+          "math": 4.862292355574999
+        },
+        {
+          "code": 5.699793207727852,
+          "science": 11.243393306945727,
+          "conversation": 7.1155539191485575,
+          "math": 4.463473533549245
+        },
+        {
+          "code": 5.568972305392224,
+          "science": 10.862333516598625,
+          "conversation": 6.586581096503007,
+          "math": 4.17814668078955
+        },
+        {
+          "code": 5.584367565743262,
+          "science": 10.816923499605744,
+          "conversation": 7.0354694016005315,
+          "math": 3.0202540110815246
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 5.568972305392224,
+          "final": 5.584367565743262,
+          "delta": 0.015395260351038331
+        },
+        "science": {
+          "best": 10.816923499605744,
+          "final": 10.816923499605744,
+          "delta": 0.0
+        },
+        "conversation": {
+          "best": 6.586581096503007,
+          "final": 7.0354694016005315,
+          "delta": 0.4488883050975243
+        },
+        "math": {
+          "best": 3.0202540110815246,
+          "final": 3.0202540110815246,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.11607089136214066,
+      "avg_final_ppl": 6.614253619507766,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.8553169598946204
+          ],
+          "time": 20.01476209500001
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.5766001481276293
+          ],
+          "time": 18.940953573
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            2.015698322883019
+          ],
+          "time": 18.833554695999993
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.218611845603356
+          ],
+          "time": 18.966130679000003
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_attention_seed42"
+    },
+    {
+      "strategy": "lora_attention",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 499712,
+      "total_params": 3197609344,
+      "param_pct": "0.02%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 6.051329003427177,
+          "science": 12.777383752259968,
+          "conversation": 7.289957036585256,
+          "math": 4.865701633688027
+        },
+        {
+          "code": 5.71651660181995,
+          "science": 11.280683859483556,
+          "conversation": 7.111881775209572,
+          "math": 4.499146393203552
+        },
+        {
+          "code": 5.5378271458090795,
+          "science": 10.777503396205981,
+          "conversation": 6.6035061562404005,
+          "math": 4.233281723804241
+        },
+        {
+          "code": 5.5437317915199,
+          "science": 10.875620763974917,
+          "conversation": 6.91651165937554,
+          "math": 3.0740316649245383
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 5.5378271458090795,
+          "final": 5.5437317915199,
+          "delta": 0.005904645710820056
+        },
+        "science": {
+          "best": 10.777503396205981,
+          "final": 10.875620763974917,
+          "delta": 0.09811736776893554
+        },
+        "conversation": {
+          "best": 6.6035061562404005,
+          "final": 6.91651165937554,
+          "delta": 0.3130055031351393
+        },
+        "math": {
+          "best": 3.0740316649245383,
+          "final": 3.0740316649245383,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.10425687915372372,
+      "avg_final_ppl": 6.602473969948724,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.846439398252047
+          ],
+          "time": 19.118412519999993
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.56768144094027
+          ],
+          "time": 18.92971265
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            2.034183823145353
+          ],
+          "time": 18.84610494499998
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.2479076110399687
+          ],
+          "time": 18.641991292
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_attention_seed123"
+    },
+    {
+      "strategy": "lora_attention",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 499712,
+      "total_params": 3197609344,
+      "param_pct": "0.02%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 6.044105146320287,
+          "science": 12.765847542672889,
+          "conversation": 7.2833924473864355,
+          "math": 4.85748709108745
+        },
+        {
+          "code": 5.711640185069233,
+          "science": 11.303189191228677,
+          "conversation": 7.118275806001483,
+          "math": 4.512263074392669
+        },
+        {
+          "code": 5.551986522110614,
+          "science": 10.908185621156012,
+          "conversation": 6.62401679513142,
+          "math": 4.184132778555401
+        },
+        {
+          "code": 5.517517114751206,
+          "science": 10.962367643634028,
+          "conversation": 6.725613526075983,
+          "math": 3.0078199521193696
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 5.517517114751206,
+          "final": 5.517517114751206,
+          "delta": 0.0
+        },
+        "science": {
+          "best": 10.908185621156012,
+          "final": 10.962367643634028,
+          "delta": 0.054182022478016734
+        },
+        "conversation": {
+          "best": 6.62401679513142,
+          "final": 6.725613526075983,
+          "delta": 0.10159673094456245
+        },
+        "math": {
+          "best": 3.0078199521193696,
+          "final": 3.0078199521193696,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.038944688355644796,
+      "avg_final_ppl": 6.553329559145146,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.8327139065815852
+          ],
+          "time": 19.12199618599999
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.558545369368333
+          ],
+          "time": 18.92237843800001
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            2.0220046593592715
+          ],
+          "time": 18.898587252000027
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.2344477084966807
+          ],
+          "time": 18.677154565000023
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_attention_seed7"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 8519680,
+      "total_params": 3205629312,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.887436571648819,
+          "science": 12.663180251624313,
+          "conversation": 7.0804150834848105,
+          "math": 4.5701230121173015
+        },
+        {
+          "code": 4.988961709823783,
+          "science": 9.772362992090875,
+          "conversation": 7.003628051721404,
+          "math": 4.311969298784666
+        },
+        {
+          "code": 5.039105929848748,
+          "science": 9.816318462663418,
+          "conversation": 6.245819441953362,
+          "math": 4.175362181453628
+        },
+        {
+          "code": 5.1009286171023405,
+          "science": 9.789288202570178,
+          "conversation": 6.4602746627849035,
+          "math": 2.263700195884028
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.887436571648819,
+          "final": 5.1009286171023405,
+          "delta": 0.2134920454535214
+        },
+        "science": {
+          "best": 9.772362992090875,
+          "final": 9.789288202570178,
+          "delta": 0.016925210479303843
+        },
+        "conversation": {
+          "best": 6.245819441953362,
+          "final": 6.4602746627849035,
+          "delta": 0.21445522083154156
+        },
+        "math": {
+          "best": 2.263700195884028,
+          "final": 2.263700195884028,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.1112181191910917,
+      "avg_final_ppl": 5.903547919585362,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.756051861322843
+          ],
+          "time": 25.880227467000054
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.4990954399108887
+          ],
+          "time": 25.173562354999945
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9766263503294725
+          ],
+          "time": 25.26880160500002
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.0481990438241224
+          ],
+          "time": 25.160299346999977
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_ssm_seed42"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 8519680,
+      "total_params": 3205629312,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.882425316103804,
+          "science": 12.664529870636105,
+          "conversation": 7.084698081562315,
+          "math": 4.567800464376009
+        },
+        {
+          "code": 5.0358229322424535,
+          "science": 9.773839865346822,
+          "conversation": 6.980833659450016,
+          "math": 4.316656511265225
+        },
+        {
+          "code": 5.072190572276356,
+          "science": 9.81968936374146,
+          "conversation": 6.25031134706542,
+          "math": 4.164309843151611
+        },
+        {
+          "code": 5.12286721277788,
+          "science": 9.831032819643372,
+          "conversation": 6.487932795748121,
+          "math": 2.2432969082913288
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.882425316103804,
+          "final": 5.12286721277788,
+          "delta": 0.240441896674076
+        },
+        "science": {
+          "best": 9.773839865346822,
+          "final": 9.831032819643372,
+          "delta": 0.057192954296549914
+        },
+        "conversation": {
+          "best": 6.25031134706542,
+          "final": 6.487932795748121,
+          "delta": 0.23762144868270152
+        },
+        "math": {
+          "best": 2.2432969082913288,
+          "final": 2.2432969082913288,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.13381407491333186,
+      "avg_final_ppl": 5.9212824341151755,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.750705022078294
+          ],
+          "time": 25.872803913999974
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.4878375713641825
+          ],
+          "time": 25.109583159999943
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9964545598396888
+          ],
+          "time": 25.208207397000024
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.0561039310235243
+          ],
+          "time": 25.36790889300005
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_ssm_seed123"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 8519680,
+      "total_params": 3205629312,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.881293038373757,
+          "science": 12.666141014873197,
+          "conversation": 7.0845933355563036,
+          "math": 4.575802384095554
+        },
+        {
+          "code": 4.9783524702340065,
+          "science": 9.767331008765174,
+          "conversation": 6.98668471434285,
+          "math": 4.330812828948514
+        },
+        {
+          "code": 5.018239879900214,
+          "science": 9.807366655826593,
+          "conversation": 6.231052074979368,
+          "math": 4.168554122618129
+        },
+        {
+          "code": 5.025204118601257,
+          "science": 9.769474028886878,
+          "conversation": 6.413938670147661,
+          "math": 2.1595376628814806
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.881293038373757,
+          "final": 5.025204118601257,
+          "delta": 0.14391108022750032
+        },
+        "science": {
+          "best": 9.767331008765174,
+          "final": 9.769474028886878,
+          "delta": 0.0021430201217036426
+        },
+        "conversation": {
+          "best": 6.231052074979368,
+          "final": 6.413938670147661,
+          "delta": 0.1828865951682932
+        },
+        "math": {
+          "best": 2.1595376628814806,
+          "final": 2.1595376628814806,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.08223517387937429,
+      "avg_final_ppl": 5.842038620129319,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.7425165268091054
+          ],
+          "time": 25.83602854700007
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.480139035444993
+          ],
+          "time": 25.317109177999896
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9791298646193285
+          ],
+          "time": 25.337802687999897
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.03760204406885
+          ],
+          "time": 25.256165435999947
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_ssm_seed7"
+    },
+    {
+      "strategy": "lora_both",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 9019392,
+      "total_params": 3206129024,
+      "param_pct": "0.28%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.872458148725743,
+          "science": 12.65774488653547,
+          "conversation": 7.060264824470441,
+          "math": 4.5076508972477
+        },
+        {
+          "code": 5.082296831755071,
+          "science": 9.653555211079356,
+          "conversation": 7.0862230386925535,
+          "math": 4.265872190621015
+        },
+        {
+          "code": 5.08285111110735,
+          "science": 9.782990328163965,
+          "conversation": 6.241576930429747,
+          "math": 4.185619690408757
+        },
+        {
+          "code": 5.08506998694756,
+          "science": 9.78398371923816,
+          "conversation": 6.4825516643744345,
+          "math": 2.2439725634542738
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.872458148725743,
+          "final": 5.08506998694756,
+          "delta": 0.21261183822181717
+        },
+        "science": {
+          "best": 9.653555211079356,
+          "final": 9.78398371923816,
+          "delta": 0.13042850815880414
+        },
+        "conversation": {
+          "best": 6.241576930429747,
+          "final": 6.4825516643744345,
+          "delta": 0.2409747339446877
+        },
+        "math": {
+          "best": 2.2439725634542738,
+          "final": 2.2439725634542738,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.14600377008132726,
+      "avg_final_ppl": 5.898894483503607,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.7519763616415172
+          ],
+          "time": 25.92892450599993
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.48894451214717
+          ],
+          "time": 25.20993149700007
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.976207503905663
+          ],
+          "time": 25.232323880999957
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.0463440830890949
+          ],
+          "time": 25.376189350999994
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_both_seed42"
+    },
+    {
+      "strategy": "lora_both",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 9019392,
+      "total_params": 3206129024,
+      "param_pct": "0.28%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.844535750205284,
+          "science": 12.650182300719868,
+          "conversation": 7.061914439083848,
+          "math": 4.526489902541042
+        },
+        {
+          "code": 5.084844015899547,
+          "science": 9.658560677722999,
+          "conversation": 7.04901568614853,
+          "math": 4.290138806802795
+        },
+        {
+          "code": 5.072708995321363,
+          "science": 9.767569052293151,
+          "conversation": 6.237252611053654,
+          "math": 4.183028008648645
+        },
+        {
+          "code": 5.092459847427839,
+          "science": 9.829657664756233,
+          "conversation": 6.486276956199412,
+          "math": 2.216051739579155
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.844535750205284,
+          "final": 5.092459847427839,
+          "delta": 0.2479240972225547
+        },
+        "science": {
+          "best": 9.658560677722999,
+          "final": 9.829657664756233,
+          "delta": 0.17109698703323417
+        },
+        "conversation": {
+          "best": 6.237252611053654,
+          "final": 6.486276956199412,
+          "delta": 0.24902434514575855
+        },
+        "math": {
+          "best": 2.216051739579155,
+          "final": 2.216051739579155,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.16701135735038686,
+      "avg_final_ppl": 5.9061115519906595,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.7425884375205407
+          ],
+          "time": 25.86484616300004
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.476218682069045
+          ],
+          "time": 25.177148345999967
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9955685230401845
+          ],
+          "time": 25.23107078499993
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.0515343225919282
+          ],
+          "time": 25.361336058000006
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_both_seed123"
+    },
+    {
+      "strategy": "lora_both",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 9019392,
+      "total_params": 3206129024,
+      "param_pct": "0.28%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.857313102108008,
+          "science": 12.647164950365251,
+          "conversation": 7.073042212332255,
+          "math": 4.533259883263429
+        },
+        {
+          "code": 5.045903538772688,
+          "science": 9.643975759656131,
+          "conversation": 7.0359964771857015,
+          "math": 4.287899478691712
+        },
+        {
+          "code": 5.032825996951483,
+          "science": 9.749299282246662,
+          "conversation": 6.226326711524518,
+          "math": 4.202824186227279
+        },
+        {
+          "code": 5.027735906565847,
+          "science": 9.754909790992372,
+          "conversation": 6.436605084031504,
+          "math": 2.1431517229608446
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.857313102108008,
+          "final": 5.027735906565847,
+          "delta": 0.1704228044578393
+        },
+        "science": {
+          "best": 9.643975759656131,
+          "final": 9.754909790992372,
+          "delta": 0.11093403133624058
+        },
+        "conversation": {
+          "best": 6.226326711524518,
+          "final": 6.436605084031504,
+          "delta": 0.2102783725069859
+        },
+        "math": {
+          "best": 2.1431517229608446,
+          "final": 2.1431517229608446,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.12290880207526644,
+      "avg_final_ppl": 5.8406006261376415,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.7392037281623254
+          ],
+          "time": 25.71898140899998
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.4680933952331543
+          ],
+          "time": 25.161700865000057
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.97861255132235
+          ],
+          "time": 25.14984034400004
+        },
+        {
+          "task": "math",
+          "losses": [
+            1.0356813439956079
+          ],
+          "time": 25.12643045899995
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/lora_both_seed7"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 27876352,
+      "total_params": 3224985984,
+      "param_pct": "0.86%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.421722755114184,
+          "science": 12.674007413769422,
+          "conversation": 7.0228980244515355,
+          "math": 4.406327275523281
+        },
+        {
+          "code": 4.7981024352116,
+          "science": 8.96968259960255,
+          "conversation": 7.258435079431645,
+          "math": 4.397120099657195
+        },
+        {
+          "code": 4.701216558106068,
+          "science": 9.28790352830578,
+          "conversation": 6.100262642068796,
+          "math": 4.192190419395192
+        },
+        {
+          "code": 4.750096120551536,
+          "science": 9.337032721087082,
+          "conversation": 6.284975396909168,
+          "math": 1.9645028899380403
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.421722755114184,
+          "final": 4.750096120551536,
+          "delta": 0.3283733654373524
+        },
+        "science": {
+          "best": 8.96968259960255,
+          "final": 9.337032721087082,
+          "delta": 0.3673501214845327
+        },
+        "conversation": {
+          "best": 6.100262642068796,
+          "final": 6.284975396909168,
+          "delta": 0.18471275484037175
+        },
+        "math": {
+          "best": 1.9645028899380403,
+          "final": 1.9645028899380403,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.22010906044056422,
+      "avg_final_ppl": 5.584151782121456,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.6718704517071064
+          ],
+          "time": 26.337587301999974
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.424462987826421
+          ],
+          "time": 25.64951738500008
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.95940546806042
+          ],
+          "time": 25.739727227000003
+        },
+        {
+          "task": "math",
+          "losses": [
+            0.904745496236361
+          ],
+          "time": 25.75592746799998
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/all_linear_seed42"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 27876352,
+      "total_params": 3224985984,
+      "param_pct": "0.86%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.390694156208144,
+          "science": 12.656280572188939,
+          "conversation": 7.0397056163782725,
+          "math": 4.47130787953219
+        },
+        {
+          "code": 4.784559772968104,
+          "science": 8.985449820332327,
+          "conversation": 7.117357845581552,
+          "math": 4.433447261974766
+        },
+        {
+          "code": 4.707423982371949,
+          "science": 9.276212044126751,
+          "conversation": 6.083486139984279,
+          "math": 4.2014033056671485
+        },
+        {
+          "code": 4.733429583906676,
+          "science": 9.378389433874311,
+          "conversation": 6.3290805942007315,
+          "math": 1.9531316179757745
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.390694156208144,
+          "final": 4.733429583906676,
+          "delta": 0.34273542769853194
+        },
+        "science": {
+          "best": 8.985449820332327,
+          "final": 9.378389433874311,
+          "delta": 0.3929396135419836
+        },
+        "conversation": {
+          "best": 6.083486139984279,
+          "final": 6.3290805942007315,
+          "delta": 0.24559445421645254
+        },
+        "math": {
+          "best": 1.9531316179757745,
+          "final": 1.9531316179757745,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.24531737386424202,
+      "avg_final_ppl": 5.598507807489374,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.6690784050868108
+          ],
+          "time": 28.709482638000054
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.4205922071750345
+          ],
+          "time": 25.96958101900009
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9768283367156982
+          ],
+          "time": 25.90491916200017
+        },
+        {
+          "task": "math",
+          "losses": [
+            0.9386672240037185
+          ],
+          "time": 25.767857584000012
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/all_linear_seed123"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "ai21labs/AI21-Jamba-Reasoning-3B",
+      "ssm_type": "mamba",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 27876352,
+      "total_params": 3224985984,
+      "param_pct": "0.86%",
+      "baseline_ppl": {
+        "code": 6.453149430503561,
+        "science": 12.869052066439691,
+        "conversation": 7.377381088943553,
+        "math": 4.996643016384612
+      },
+      "ppl_matrix": [
+        {
+          "code": 6.453149430503561,
+          "science": 12.869052066439691,
+          "conversation": 7.377381088943553,
+          "math": 4.996643016384612
+        },
+        {
+          "code": 4.41451543424574,
+          "science": 12.674183115449328,
+          "conversation": 7.05087284370632,
+          "math": 4.476869877014833
+        },
+        {
+          "code": 4.738868183132234,
+          "science": 8.979495577916303,
+          "conversation": 7.12733730163929,
+          "math": 4.402415159838552
+        },
+        {
+          "code": 4.643639469114959,
+          "science": 9.178918286164427,
+          "conversation": 6.044982527801038,
+          "math": 4.2257203132514976
+        },
+        {
+          "code": 4.653019559699028,
+          "science": 9.192076437182504,
+          "conversation": 6.246580484169109,
+          "math": 1.9234476512869902
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 4.41451543424574,
+          "final": 4.653019559699028,
+          "delta": 0.23850412545328759
+        },
+        "science": {
+          "best": 8.979495577916303,
+          "final": 9.192076437182504,
+          "delta": 0.2125808592662004
+        },
+        "conversation": {
+          "best": 6.044982527801038,
+          "final": 6.246580484169109,
+          "delta": 0.20159795636807143
+        },
+        "math": {
+          "best": 1.9234476512869902,
+          "final": 1.9234476512869902,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 0.16317073527188986,
+      "avg_final_ppl": 5.503781033084408,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            1.666849209712102
+          ],
+          "time": 26.51076878699996
+        },
+        {
+          "task": "science",
+          "losses": [
+            2.407609224319458
+          ],
+          "time": 25.899029573999997
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            1.9618470577093272
+          ],
+          "time": 25.89447161199996
+        },
+        {
+          "task": "math",
+          "losses": [
+            0.9095469392262973
+          ],
+          "time": 25.807464582000193
+        }
+      ],
+      "adapter_path": "/results/smoke_jamba_20260320_150724/adapters/all_linear_seed7"
+    }
+  ],
+  "cl_summary": {
+    "lora_attention": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 6.590019049533879,
+      "avg_final_ppl_std": 0.026385337653984178,
+      "avg_forgetting_mean": 0.08642415295716972,
+      "avg_forgetting_std": 0.03391771798780838,
+      "param_pct": "0.02%"
+    },
+    "lora_ssm": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 5.8889563246099526,
+      "avg_final_ppl_std": 0.03395665370931064,
+      "avg_forgetting_mean": 0.10908912266126596,
+      "avg_forgetting_std": 0.02111074335712672,
+      "param_pct": "0.27%"
+    },
+    "lora_both": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 5.881868887210636,
+      "avg_final_ppl_std": 0.029329434002702583,
+      "avg_forgetting_mean": 0.14530797650232685,
+      "avg_forgetting_std": 0.018011513761613644,
+      "param_pct": "0.28%"
+    },
+    "all_linear": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 5.562146874231746,
+      "avg_final_ppl_std": 0.041684948728274225,
+      "avg_forgetting_mean": 0.2095323898588987,
+      "avg_forgetting_std": 0.03436002549912162,
+      "param_pct": "0.86%"
+    }
+  },
+  "mmlu_results": {
+    "base": {
+      "label": "base",
+      "time": 752.336680635,
+      "returncode": 0,
+      "raw_line": "|mmlu              |      2|none  |      |acc   |\u2191  |0.6379|\u00b1  |0.0060|",
+      "stdout_tail": "psychology             |      1|none  |     5|acc   |\u2191  |0.8600|\u00b1  |0.0349|\n|  - human_sexuality                    |      1|none  |     5|acc   |\u2191  |0.7700|\u00b1  |0.0423|\n|  - professional_psychology            |      1|none  |     5|acc   |\u2191  |0.6000|\u00b1  |0.0492|\n|  - public_relations                   |      1|none  |     5|acc   |\u2191  |0.6700|\u00b1  |0.0473|\n|  - security_studies                   |      1|none  |     5|acc   |\u2191  |0.6000|\u00b1  |0.0492|\n|  - sociology                          |      1|none  |     5|acc   |\u2191  |0.7800|\u00b1  |0.0416|\n|  - us_foreign_policy                  |      1|none  |     5|acc   |\u2191  |0.8400|\u00b1  |0.0368|\n| - stem                                |      2|none  |      |acc   |\u2191  |0.5611|\u00b1  |0.0110|\n|  - abstract_algebra                   |      1|none  |     5|acc   |\u2191  |0.4000|\u00b1  |0.0492|\n|  - anatomy                            |      1|none  |     5|acc   |\u2191  |0.5700|\u00b1  |0.0498|\n|  - astronomy                          |      1|none  |     5|acc   |\u2191  |0.6900|\u00b1  |0.0465|\n|  - college_biology                    |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - college_chemistry                  |      1|none  |     5|acc   |\u2191  |0.4600|\u00b1  |0.0501|\n|  - college_computer_science           |      1|none  |     5|acc   |\u2191  |0.4400|\u00b1  |0.0499|\n|  - college_mathematics                |      1|none  |     5|acc   |\u2191  |0.4100|\u00b1  |0.0494|\n|  - college_physics                    |      1|none  |     5|acc   |\u2191  |0.4900|\u00b1  |0.0502|\n|  - computer_security                  |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - conceptual_physics                 |      1|none  |     5|acc   |\u2191  |0.6300|\u00b1  |0.0485|\n|  - electrical_engineering             |      1|none  |     5|acc   |\u2191  |0.7100|\u00b1  |0.0456|\n|  - elementary_mathematics             |      1|none  |     5|acc   |\u2191  |0.5400|\u00b1  |0.0501|\n|  - high_school_biology                |      1|none  |     5|acc   |\u2191  |0.8000|\u00b1  |0.0402|\n|  - high_school_chemistry              |      1|none  |     5|acc   |\u2191  |0.5600|\u00b1  |0.0499|\n|  - high_school_computer_science       |      1|none  |     5|acc   |\u2191  |0.6800|\u00b1  |0.0469|\n|  - high_school_mathematics            |      1|none  |     5|acc   |\u2191  |0.3700|\u00b1  |0.0485|\n|  - high_school_physics                |      1|none  |     5|acc   |\u2191  |0.4000|\u00b1  |0.0492|\n|  - high_school_statistics             |      1|none  |     5|acc   |\u2191  |0.5700|\u00b1  |0.0498|\n|  - machine_learning                   |      1|none  |     5|acc   |\u2191  |0.4600|\u00b1  |0.0501|\n\n|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|\n|------------------|------:|------|------|------|---|-----:|---|-----:|\n|mmlu              |      2|none  |      |acc   |\u2191  |0.6379|\u00b1  |0.0060|\n| - humanities     |      2|none  |      |acc   |\u2191  |0.6554|\u00b1  |0.0121|\n| - other          |      2|none  |      |acc   |\u2191  |0.6508|\u00b1  |0.0127|\n| - social sciences|      2|none  |      |acc   |\u2191  |0.7267|\u00b1  |0.0124|\n| - stem           |      2|none  |      |acc   |\u2191  |0.5611|\u00b1  |0.0110|\n\n"
+    },
+    "lora_attention_seed42": {
+      "label": "lora_attention_seed42",
+      "time": 683.6600134509999,
+      "returncode": 0,
+      "raw_line": "|mmlu              |      2|none  |      |acc   |\u2191  |0.6356|\u00b1  |0.0060|",
+      "stdout_tail": "psychology             |      1|none  |     5|acc   |\u2191  |0.8400|\u00b1  |0.0368|\n|  - human_sexuality                    |      1|none  |     5|acc   |\u2191  |0.7700|\u00b1  |0.0423|\n|  - professional_psychology            |      1|none  |     5|acc   |\u2191  |0.6100|\u00b1  |0.0490|\n|  - public_relations                   |      1|none  |     5|acc   |\u2191  |0.6500|\u00b1  |0.0479|\n|  - security_studies                   |      1|none  |     5|acc   |\u2191  |0.6200|\u00b1  |0.0488|\n|  - sociology                          |      1|none  |     5|acc   |\u2191  |0.7800|\u00b1  |0.0416|\n|  - us_foreign_policy                  |      1|none  |     5|acc   |\u2191  |0.8700|\u00b1  |0.0338|\n| - stem                                |      2|none  |      |acc   |\u2191  |0.5605|\u00b1  |0.0110|\n|  - abstract_algebra                   |      1|none  |     5|acc   |\u2191  |0.4000|\u00b1  |0.0492|\n|  - anatomy                            |      1|none  |     5|acc   |\u2191  |0.5900|\u00b1  |0.0494|\n|  - astronomy                          |      1|none  |     5|acc   |\u2191  |0.7000|\u00b1  |0.0461|\n|  - college_biology                    |      1|none  |     5|acc   |\u2191  |0.7600|\u00b1  |0.0429|\n|  - college_chemistry                  |      1|none  |     5|acc   |\u2191  |0.4700|\u00b1  |0.0502|\n|  - college_computer_science           |      1|none  |     5|acc   |\u2191  |0.5400|\u00b1  |0.0501|\n|  - college_mathematics                |      1|none  |     5|acc   |\u2191  |0.3900|\u00b1  |0.0490|\n|  - college_physics                    |      1|none  |     5|acc   |\u2191  |0.4900|\u00b1  |0.0502|\n|  - computer_security                  |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - conceptual_physics                 |      1|none  |     5|acc   |\u2191  |0.5400|\u00b1  |0.0501|\n|  - electrical_engineering             |      1|none  |     5|acc   |\u2191  |0.7100|\u00b1  |0.0456|\n|  - elementary_mathematics             |      1|none  |     5|acc   |\u2191  |0.5100|\u00b1  |0.0502|\n|  - high_school_biology                |      1|none  |     5|acc   |\u2191  |0.7800|\u00b1  |0.0416|\n|  - high_school_chemistry              |      1|none  |     5|acc   |\u2191  |0.6200|\u00b1  |0.0488|\n|  - high_school_computer_science       |      1|none  |     5|acc   |\u2191  |0.7000|\u00b1  |0.0461|\n|  - high_school_mathematics            |      1|none  |     5|acc   |\u2191  |0.3900|\u00b1  |0.0490|\n|  - high_school_physics                |      1|none  |     5|acc   |\u2191  |0.3900|\u00b1  |0.0490|\n|  - high_school_statistics             |      1|none  |     5|acc   |\u2191  |0.5200|\u00b1  |0.0502|\n|  - machine_learning                   |      1|none  |     5|acc   |\u2191  |0.4100|\u00b1  |0.0494|\n\n|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|\n|------------------|------:|------|------|------|---|-----:|---|-----:|\n|mmlu              |      2|none  |      |acc   |\u2191  |0.6356|\u00b1  |0.0060|\n| - humanities     |      2|none  |      |acc   |\u2191  |0.6446|\u00b1  |0.0123|\n| - other          |      2|none  |      |acc   |\u2191  |0.6531|\u00b1  |0.0128|\n| - social sciences|      2|none  |      |acc   |\u2191  |0.7258|\u00b1  |0.0123|\n| - stem           |      2|none  |      |acc   |\u2191  |0.5605|\u00b1  |0.0110|\n\n"
+    },
+    "lora_ssm_seed42": {
+      "label": "lora_ssm_seed42",
+      "time": 703.4748896180004,
+      "returncode": 0,
+      "raw_line": "|mmlu              |      2|none  |      |acc   |\u2191  |0.6242|\u00b1  |0.0061|",
+      "stdout_tail": "psychology             |      1|none  |     5|acc   |\u2191  |0.8100|\u00b1  |0.0394|\n|  - human_sexuality                    |      1|none  |     5|acc   |\u2191  |0.7600|\u00b1  |0.0429|\n|  - professional_psychology            |      1|none  |     5|acc   |\u2191  |0.6200|\u00b1  |0.0488|\n|  - public_relations                   |      1|none  |     5|acc   |\u2191  |0.6500|\u00b1  |0.0479|\n|  - security_studies                   |      1|none  |     5|acc   |\u2191  |0.5800|\u00b1  |0.0496|\n|  - sociology                          |      1|none  |     5|acc   |\u2191  |0.7900|\u00b1  |0.0409|\n|  - us_foreign_policy                  |      1|none  |     5|acc   |\u2191  |0.8500|\u00b1  |0.0359|\n| - stem                                |      2|none  |      |acc   |\u2191  |0.5453|\u00b1  |0.0111|\n|  - abstract_algebra                   |      1|none  |     5|acc   |\u2191  |0.4400|\u00b1  |0.0499|\n|  - anatomy                            |      1|none  |     5|acc   |\u2191  |0.5600|\u00b1  |0.0499|\n|  - astronomy                          |      1|none  |     5|acc   |\u2191  |0.6900|\u00b1  |0.0465|\n|  - college_biology                    |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - college_chemistry                  |      1|none  |     5|acc   |\u2191  |0.4900|\u00b1  |0.0502|\n|  - college_computer_science           |      1|none  |     5|acc   |\u2191  |0.5300|\u00b1  |0.0502|\n|  - college_mathematics                |      1|none  |     5|acc   |\u2191  |0.3800|\u00b1  |0.0488|\n|  - college_physics                    |      1|none  |     5|acc   |\u2191  |0.4500|\u00b1  |0.0500|\n|  - computer_security                  |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - conceptual_physics                 |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - electrical_engineering             |      1|none  |     5|acc   |\u2191  |0.6900|\u00b1  |0.0465|\n|  - elementary_mathematics             |      1|none  |     5|acc   |\u2191  |0.5300|\u00b1  |0.0502|\n|  - high_school_biology                |      1|none  |     5|acc   |\u2191  |0.7600|\u00b1  |0.0429|\n|  - high_school_chemistry              |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - high_school_computer_science       |      1|none  |     5|acc   |\u2191  |0.6500|\u00b1  |0.0479|\n|  - high_school_mathematics            |      1|none  |     5|acc   |\u2191  |0.3100|\u00b1  |0.0465|\n|  - high_school_physics                |      1|none  |     5|acc   |\u2191  |0.3400|\u00b1  |0.0476|\n|  - high_school_statistics             |      1|none  |     5|acc   |\u2191  |0.5300|\u00b1  |0.0502|\n|  - machine_learning                   |      1|none  |     5|acc   |\u2191  |0.4300|\u00b1  |0.0498|\n\n|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|\n|------------------|------:|------|------|------|---|-----:|---|-----:|\n|mmlu              |      2|none  |      |acc   |\u2191  |0.6242|\u00b1  |0.0061|\n| - humanities     |      2|none  |      |acc   |\u2191  |0.6546|\u00b1  |0.0123|\n| - other          |      2|none  |      |acc   |\u2191  |0.6338|\u00b1  |0.0129|\n| - social sciences|      2|none  |      |acc   |\u2191  |0.7058|\u00b1  |0.0125|\n| - stem           |      2|none  |      |acc   |\u2191  |0.5453|\u00b1  |0.0111|\n\n"
+    },
+    "lora_both_seed42": {
+      "label": "lora_both_seed42",
+      "time": 705.713844459,
+      "returncode": 0,
+      "raw_line": "|mmlu              |      2|none  |      |acc   |\u2191  |0.6261|\u00b1  |0.0061|",
+      "stdout_tail": "psychology             |      1|none  |     5|acc   |\u2191  |0.8300|\u00b1  |0.0378|\n|  - human_sexuality                    |      1|none  |     5|acc   |\u2191  |0.7600|\u00b1  |0.0429|\n|  - professional_psychology            |      1|none  |     5|acc   |\u2191  |0.6300|\u00b1  |0.0485|\n|  - public_relations                   |      1|none  |     5|acc   |\u2191  |0.6700|\u00b1  |0.0473|\n|  - security_studies                   |      1|none  |     5|acc   |\u2191  |0.6000|\u00b1  |0.0492|\n|  - sociology                          |      1|none  |     5|acc   |\u2191  |0.8000|\u00b1  |0.0402|\n|  - us_foreign_policy                  |      1|none  |     5|acc   |\u2191  |0.8400|\u00b1  |0.0368|\n| - stem                                |      2|none  |      |acc   |\u2191  |0.5395|\u00b1  |0.0111|\n|  - abstract_algebra                   |      1|none  |     5|acc   |\u2191  |0.4000|\u00b1  |0.0492|\n|  - anatomy                            |      1|none  |     5|acc   |\u2191  |0.5700|\u00b1  |0.0498|\n|  - astronomy                          |      1|none  |     5|acc   |\u2191  |0.6800|\u00b1  |0.0469|\n|  - college_biology                    |      1|none  |     5|acc   |\u2191  |0.7200|\u00b1  |0.0451|\n|  - college_chemistry                  |      1|none  |     5|acc   |\u2191  |0.4800|\u00b1  |0.0502|\n|  - college_computer_science           |      1|none  |     5|acc   |\u2191  |0.5200|\u00b1  |0.0502|\n|  - college_mathematics                |      1|none  |     5|acc   |\u2191  |0.3700|\u00b1  |0.0485|\n|  - college_physics                    |      1|none  |     5|acc   |\u2191  |0.4500|\u00b1  |0.0500|\n|  - computer_security                  |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - conceptual_physics                 |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - electrical_engineering             |      1|none  |     5|acc   |\u2191  |0.7000|\u00b1  |0.0461|\n|  - elementary_mathematics             |      1|none  |     5|acc   |\u2191  |0.5000|\u00b1  |0.0503|\n|  - high_school_biology                |      1|none  |     5|acc   |\u2191  |0.7400|\u00b1  |0.0441|\n|  - high_school_chemistry              |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - high_school_computer_science       |      1|none  |     5|acc   |\u2191  |0.6700|\u00b1  |0.0473|\n|  - high_school_mathematics            |      1|none  |     5|acc   |\u2191  |0.3300|\u00b1  |0.0473|\n|  - high_school_physics                |      1|none  |     5|acc   |\u2191  |0.3200|\u00b1  |0.0469|\n|  - high_school_statistics             |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - machine_learning                   |      1|none  |     5|acc   |\u2191  |0.4100|\u00b1  |0.0494|\n\n|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|\n|------------------|------:|------|------|------|---|-----:|---|-----:|\n|mmlu              |      2|none  |      |acc   |\u2191  |0.6261|\u00b1  |0.0061|\n| - humanities     |      2|none  |      |acc   |\u2191  |0.6531|\u00b1  |0.0122|\n| - other          |      2|none  |      |acc   |\u2191  |0.6385|\u00b1  |0.0129|\n| - social sciences|      2|none  |      |acc   |\u2191  |0.7208|\u00b1  |0.0123|\n| - stem           |      2|none  |      |acc   |\u2191  |0.5395|\u00b1  |0.0111|\n\n"
+    },
+    "all_linear_seed42": {
+      "label": "all_linear_seed42",
+      "time": 743.2336416879998,
+      "returncode": 0,
+      "raw_line": "|mmlu              |      2|none  |      |acc   |\u2191  |0.6267|\u00b1  |0.0060|",
+      "stdout_tail": "psychology             |      1|none  |     5|acc   |\u2191  |0.8400|\u00b1  |0.0368|\n|  - human_sexuality                    |      1|none  |     5|acc   |\u2191  |0.7700|\u00b1  |0.0423|\n|  - professional_psychology            |      1|none  |     5|acc   |\u2191  |0.6500|\u00b1  |0.0479|\n|  - public_relations                   |      1|none  |     5|acc   |\u2191  |0.6400|\u00b1  |0.0482|\n|  - security_studies                   |      1|none  |     5|acc   |\u2191  |0.6200|\u00b1  |0.0488|\n|  - sociology                          |      1|none  |     5|acc   |\u2191  |0.7900|\u00b1  |0.0409|\n|  - us_foreign_policy                  |      1|none  |     5|acc   |\u2191  |0.8600|\u00b1  |0.0349|\n| - stem                                |      2|none  |      |acc   |\u2191  |0.5395|\u00b1  |0.0110|\n|  - abstract_algebra                   |      1|none  |     5|acc   |\u2191  |0.3800|\u00b1  |0.0488|\n|  - anatomy                            |      1|none  |     5|acc   |\u2191  |0.5500|\u00b1  |0.0500|\n|  - astronomy                          |      1|none  |     5|acc   |\u2191  |0.6600|\u00b1  |0.0476|\n|  - college_biology                    |      1|none  |     5|acc   |\u2191  |0.7300|\u00b1  |0.0446|\n|  - college_chemistry                  |      1|none  |     5|acc   |\u2191  |0.4800|\u00b1  |0.0502|\n|  - college_computer_science           |      1|none  |     5|acc   |\u2191  |0.5200|\u00b1  |0.0502|\n|  - college_mathematics                |      1|none  |     5|acc   |\u2191  |0.3700|\u00b1  |0.0485|\n|  - college_physics                    |      1|none  |     5|acc   |\u2191  |0.4600|\u00b1  |0.0501|\n|  - computer_security                  |      1|none  |     5|acc   |\u2191  |0.7300|\u00b1  |0.0446|\n|  - conceptual_physics                 |      1|none  |     5|acc   |\u2191  |0.5900|\u00b1  |0.0494|\n|  - electrical_engineering             |      1|none  |     5|acc   |\u2191  |0.7000|\u00b1  |0.0461|\n|  - elementary_mathematics             |      1|none  |     5|acc   |\u2191  |0.5000|\u00b1  |0.0503|\n|  - high_school_biology                |      1|none  |     5|acc   |\u2191  |0.7600|\u00b1  |0.0429|\n|  - high_school_chemistry              |      1|none  |     5|acc   |\u2191  |0.5300|\u00b1  |0.0502|\n|  - high_school_computer_science       |      1|none  |     5|acc   |\u2191  |0.6800|\u00b1  |0.0469|\n|  - high_school_mathematics            |      1|none  |     5|acc   |\u2191  |0.3300|\u00b1  |0.0473|\n|  - high_school_physics                |      1|none  |     5|acc   |\u2191  |0.3100|\u00b1  |0.0465|\n|  - high_school_statistics             |      1|none  |     5|acc   |\u2191  |0.5600|\u00b1  |0.0499|\n|  - machine_learning                   |      1|none  |     5|acc   |\u2191  |0.4100|\u00b1  |0.0494|\n\n|      Groups      |Version|Filter|n-shot|Metric|   |Value |   |Stderr|\n|------------------|------:|------|------|------|---|-----:|---|-----:|\n|mmlu              |      2|none  |      |acc   |\u2191  |0.6267|\u00b1  |0.0060|\n| - humanities     |      2|none  |      |acc   |\u2191  |0.6546|\u00b1  |0.0122|\n| - other          |      2|none  |      |acc   |\u2191  |0.6392|\u00b1  |0.0129|\n| - social sciences|      2|none  |      |acc   |\u2191  |0.7208|\u00b1  |0.0123|\n| - stem           |      2|none  |      |acc   |\u2191  |0.5395|\u00b1  |0.0110|\n\n"
+    }
+  },
+  "timestamp": "2026-03-20T21:43:50.039160+00:00"
+}

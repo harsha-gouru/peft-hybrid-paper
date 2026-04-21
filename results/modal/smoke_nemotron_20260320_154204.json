@@ -1,0 +1,1042 @@
+{
+  "run_id": "smoke_nemotron_20260320_154204",
+  "model": "nemotron",
+  "model_id": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+  "ssm_type": "mamba2",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "total_time_seconds": 2540.736314564,
+  "total_time_human": "42.3 minutes",
+  "config": {
+    "num_train": 50,
+    "num_test": 20,
+    "max_len": 128,
+    "batch_size": 4,
+    "num_epochs": 1,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lr": 0.0002,
+    "seeds": [
+      42,
+      123,
+      7
+    ]
+  },
+  "cl_results": [
+    {
+      "strategy": "lora_attention",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 1589248,
+      "total_params": 3975146080,
+      "param_pct": "0.04%",
+      "baseline_ppl": {
+        "code": 2874.195477192962,
+        "science": 4681.218007794339,
+        "conversation": 3254.5628167416858,
+        "math": 707.3728205193305
+      },
+      "ppl_matrix": [
+        {
+          "code": 2874.195477192962,
+          "science": 4681.218007794339,
+          "conversation": 3254.5628167416858,
+          "math": 707.3728205193305
+        },
+        {
+          "code": 579.0690692312337,
+          "science": 2871.8315840788255,
+          "conversation": 1649.8255440677706,
+          "math": 494.33025930029385
+        },
+        {
+          "code": 1362.2402588170003,
+          "science": 683.4705481832324,
+          "conversation": 764.8794369268442,
+          "math": 287.8700699524167
+        },
+        {
+          "code": 908.3736300241791,
+          "science": 1425.266673390508,
+          "conversation": 295.0585383851966,
+          "math": 172.32440122291837
+        },
+        {
+          "code": 705.9740227193612,
+          "science": 1286.2537853314413,
+          "conversation": 398.12408010044106,
+          "math": 50.53366962205569
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 579.0690692312337,
+          "final": 705.9740227193612,
+          "delta": 126.90495348812749
+        },
+        "science": {
+          "best": 683.4705481832324,
+          "final": 1286.2537853314413,
+          "delta": 602.783237148209
+        },
+        "conversation": {
+          "best": 295.0585383851966,
+          "final": 398.12408010044106,
+          "delta": 103.06554171524448
+        },
+        "math": {
+          "best": 50.53366962205569,
+          "final": 50.53366962205569,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 208.18843308789525,
+      "avg_final_ppl": 610.2213894433248,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            7.201658432300274
+          ],
+          "time": 25.937650896000008
+        },
+        {
+          "task": "science",
+          "losses": [
+            6.936450444735014
+          ],
+          "time": 24.910526850999986
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            5.937563419342041
+          ],
+          "time": 24.66917083300001
+        },
+        {
+          "task": "math",
+          "losses": [
+            4.410169674799993
+          ],
+          "time": 24.615769484999987
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_attention_seed42"
+    },
+    {
+      "strategy": "lora_attention",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 1589248,
+      "total_params": 3975146080,
+      "param_pct": "0.04%",
+      "baseline_ppl": {
+        "code": 4323.5703097981,
+        "science": 5365.107242599892,
+        "conversation": 3249.3379001045073,
+        "math": 1204.5906230677815
+      },
+      "ppl_matrix": [
+        {
+          "code": 4323.5703097981,
+          "science": 5365.107242599892,
+          "conversation": 3249.3379001045073,
+          "math": 1204.5906230677815
+        },
+        {
+          "code": 1114.3487903989776,
+          "science": 5170.038388130581,
+          "conversation": 2771.5504460557445,
+          "math": 831.946091139416
+        },
+        {
+          "code": 3668.6606734662128,
+          "science": 1137.9833239613552,
+          "conversation": 1371.6675818990727,
+          "math": 662.2870839391315
+        },
+        {
+          "code": 2077.4168073414,
+          "science": 1436.5329055894597,
+          "conversation": 457.9469856681427,
+          "math": 300.52779024151243
+        },
+        {
+          "code": 2449.221491290191,
+          "science": 2482.717048894936,
+          "conversation": 763.0152609296555,
+          "math": 86.00483259027541
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 1114.3487903989776,
+          "final": 2449.221491290191,
+          "delta": 1334.8727008912133
+        },
+        "science": {
+          "best": 1137.9833239613552,
+          "final": 2482.717048894936,
+          "delta": 1344.7337249335808
+        },
+        "conversation": {
+          "best": 457.9469856681427,
+          "final": 763.0152609296555,
+          "delta": 305.0682752615128
+        },
+        "math": {
+          "best": 86.00483259027541,
+          "final": 86.00483259027541,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 746.1686752715768,
+      "avg_final_ppl": 1445.2396584262644,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            7.712838392991286
+          ],
+          "time": 24.697326023000016
+        },
+        {
+          "task": "science",
+          "losses": [
+            7.389942646026611
+          ],
+          "time": 24.63691163499999
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            6.526778661287748
+          ],
+          "time": 24.669907499999965
+        },
+        {
+          "task": "math",
+          "losses": [
+            5.0157275933485765
+          ],
+          "time": 24.62407265400003
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_attention_seed123"
+    },
+    {
+      "strategy": "lora_attention",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 1589248,
+      "total_params": 3975146080,
+      "param_pct": "0.04%",
+      "baseline_ppl": {
+        "code": 2971.6400238897318,
+        "science": 4434.203253477104,
+        "conversation": 3636.254214039251,
+        "math": 1052.095382761503
+      },
+      "ppl_matrix": [
+        {
+          "code": 2971.6400238897318,
+          "science": 4434.203253477104,
+          "conversation": 3636.254214039251,
+          "math": 1052.095382761503
+        },
+        {
+          "code": 675.3650143673315,
+          "science": 3093.6119061418945,
+          "conversation": 2249.275787506141,
+          "math": 729.1369975501559
+        },
+        {
+          "code": 1360.7323946503266,
+          "science": 687.6351493909939,
+          "conversation": 845.6755412614405,
+          "math": 322.71071725018135
+        },
+        {
+          "code": 854.6794712831336,
+          "science": 1083.8936497594498,
+          "conversation": 333.55104234671995,
+          "math": 183.8848051662847
+        },
+        {
+          "code": 709.3978437702464,
+          "science": 1099.9469559337174,
+          "conversation": 447.3689352227516,
+          "math": 54.31115944853262
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 675.3650143673315,
+          "final": 709.3978437702464,
+          "delta": 34.0328294029149
+        },
+        "science": {
+          "best": 687.6351493909939,
+          "final": 1099.9469559337174,
+          "delta": 412.3118065427235
+        },
+        "conversation": {
+          "best": 333.55104234671995,
+          "final": 447.3689352227516,
+          "delta": 113.81789287603164
+        },
+        "math": {
+          "best": 54.31115944853262,
+          "final": 54.31115944853262,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 140.04063220541752,
+      "avg_final_ppl": 577.756223593812,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            7.300345604236309
+          ],
+          "time": 24.724416676000033
+        },
+        {
+          "task": "science",
+          "losses": [
+            7.001077065101037
+          ],
+          "time": 24.667318666999904
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            6.087075710296631
+          ],
+          "time": 24.660284545999957
+        },
+        {
+          "task": "math",
+          "losses": [
+            4.4759279397817755
+          ],
+          "time": 24.6209084300001
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_attention_seed7"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 10569216,
+      "total_params": 3984126048,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 2874.195477192962,
+        "science": 4681.218007794339,
+        "conversation": 3254.5628167416858,
+        "math": 707.3728205193305
+      },
+      "ppl_matrix": [
+        {
+          "code": 2874.195477192962,
+          "science": 4681.218007794339,
+          "conversation": 3254.5628167416858,
+          "math": 707.3728205193305
+        },
+        {
+          "code": 200.6722756523177,
+          "science": 2056.0961659849136,
+          "conversation": 946.2707103652557,
+          "math": 236.46890483398064
+        },
+        {
+          "code": 708.808560562494,
+          "science": 253.95190888791515,
+          "conversation": 389.1929575216824,
+          "math": 139.56755932392474
+        },
+        {
+          "code": 177.29076047884112,
+          "science": 430.1216881552529,
+          "conversation": 97.79351367749322,
+          "math": 61.83958378496428
+        },
+        {
+          "code": 299.94454236488735,
+          "science": 688.1720721258711,
+          "conversation": 146.94451934986574,
+          "math": 16.011703286940598
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 177.29076047884112,
+          "final": 299.94454236488735,
+          "delta": 122.65378188604623
+        },
+        "science": {
+          "best": 253.95190888791515,
+          "final": 688.1720721258711,
+          "delta": 434.22016323795594
+        },
+        "conversation": {
+          "best": 97.79351367749322,
+          "final": 146.94451934986574,
+          "delta": 49.15100567237252
+        },
+        "math": {
+          "best": 16.011703286940598,
+          "final": 16.011703286940598,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 151.50623769909367,
+      "avg_final_ppl": 287.7682092818912,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            6.585573416489821
+          ],
+          "time": 31.40172541100003
+        },
+        {
+          "task": "science",
+          "losses": [
+            6.1527904730576735
+          ],
+          "time": 31.39207702500005
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            5.045254340538611
+          ],
+          "time": 31.430320277999954
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.2317127264462986
+          ],
+          "time": 31.38855116700006
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_ssm_seed42"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 10569216,
+      "total_params": 3984126048,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 4323.5703097981,
+        "science": 5365.107242599892,
+        "conversation": 3249.3379001045073,
+        "math": 1204.5906230677815
+      },
+      "ppl_matrix": [
+        {
+          "code": 4323.5703097981,
+          "science": 5365.107242599892,
+          "conversation": 3249.3379001045073,
+          "math": 1204.5906230677815
+        },
+        {
+          "code": 333.4479778035308,
+          "science": 3024.822157539432,
+          "conversation": 1100.5043464052296,
+          "math": 369.71358539204397
+        },
+        {
+          "code": 1292.1914544521894,
+          "science": 324.5734320520878,
+          "conversation": 497.7017686500175,
+          "math": 267.41233679299165
+        },
+        {
+          "code": 255.1333853323508,
+          "science": 552.3092039122453,
+          "conversation": 112.01439538350904,
+          "math": 79.74163616985724
+        },
+        {
+          "code": 285.64789677411255,
+          "science": 655.4037344129839,
+          "conversation": 163.99199794719053,
+          "math": 17.695954381750308
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 255.1333853323508,
+          "final": 285.64789677411255,
+          "delta": 30.514511441761755
+        },
+        "science": {
+          "best": 324.5734320520878,
+          "final": 655.4037344129839,
+          "delta": 330.8303023608961
+        },
+        "conversation": {
+          "best": 112.01439538350904,
+          "final": 163.99199794719053,
+          "delta": 51.97760256368149
+        },
+        "math": {
+          "best": 17.695954381750308,
+          "final": 17.695954381750308,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 103.33060409158485,
+      "avg_final_ppl": 280.68489587900933,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            7.203730766589825
+          ],
+          "time": 31.395786423000004
+        },
+        {
+          "task": "science",
+          "losses": [
+            6.350188181950496
+          ],
+          "time": 31.394888379000008
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            5.244911450606126
+          ],
+          "time": 31.438840316999972
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.395593753227821
+          ],
+          "time": 31.388613618000022
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_ssm_seed123"
+    },
+    {
+      "strategy": "lora_ssm",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 10569216,
+      "total_params": 3984126048,
+      "param_pct": "0.27%",
+      "baseline_ppl": {
+        "code": 2971.6400238897318,
+        "science": 4434.203253477104,
+        "conversation": 3636.254214039251,
+        "math": 1052.095382761503
+      },
+      "ppl_matrix": [
+        {
+          "code": 2971.6400238897318,
+          "science": 4434.203253477104,
+          "conversation": 3636.254214039251,
+          "math": 1052.095382761503
+        },
+        {
+          "code": 180.4796313564225,
+          "science": 1788.4219236726824,
+          "conversation": 933.8988444497093,
+          "math": 229.5307418392459
+        },
+        {
+          "code": 669.7097398343875,
+          "science": 244.63518415307087,
+          "conversation": 422.88604154820723,
+          "math": 150.84086676655366
+        },
+        {
+          "code": 179.8522751418597,
+          "science": 481.11124576188377,
+          "conversation": 92.14571070832655,
+          "math": 61.45328260716504
+        },
+        {
+          "code": 275.18916631515765,
+          "science": 774.9255198128067,
+          "conversation": 150.5341484682702,
+          "math": 16.392554749811016
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 179.8522751418597,
+          "final": 275.18916631515765,
+          "delta": 95.33689117329794
+        },
+        "science": {
+          "best": 244.63518415307087,
+          "final": 774.9255198128067,
+          "delta": 530.2903356597358
+        },
+        "conversation": {
+          "best": 92.14571070832655,
+          "final": 150.5341484682702,
+          "delta": 58.38843775994364
+        },
+        "math": {
+          "best": 16.392554749811016,
+          "final": 16.392554749811016,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 171.00391614824434,
+      "avg_final_ppl": 304.2603473365114,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            6.507134327521691
+          ],
+          "time": 31.395616588000166
+        },
+        {
+          "task": "science",
+          "losses": [
+            6.036154270172119
+          ],
+          "time": 31.39166117700006
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            5.006759936992939
+          ],
+          "time": 31.432355845999837
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.2532582649817834
+          ],
+          "time": 31.38857306900013
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/lora_ssm_seed7"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 42,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 20688384,
+      "total_params": 3994245216,
+      "param_pct": "0.52%",
+      "baseline_ppl": {
+        "code": 2874.195477192962,
+        "science": 4681.218007794339,
+        "conversation": 3254.5628167416858,
+        "math": 707.3728205193305
+      },
+      "ppl_matrix": [
+        {
+          "code": 2874.195477192962,
+          "science": 4681.218007794339,
+          "conversation": 3254.5628167416858,
+          "math": 707.3728205193305
+        },
+        {
+          "code": 145.1415748753479,
+          "science": 1686.8966255617784,
+          "conversation": 821.5795566803914,
+          "math": 158.79160521974833
+        },
+        {
+          "code": 633.6539838836273,
+          "science": 213.57687475914435,
+          "conversation": 309.7989062710851,
+          "math": 127.31351844809454
+        },
+        {
+          "code": 152.30236463317155,
+          "science": 351.022143299224,
+          "conversation": 80.60446809092043,
+          "math": 51.88080406594023
+        },
+        {
+          "code": 259.6759752297362,
+          "science": 517.6480144325689,
+          "conversation": 128.13876705770394,
+          "math": 13.142045910223148
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 145.1415748753479,
+          "final": 259.6759752297362,
+          "delta": 114.53440035438828
+        },
+        "science": {
+          "best": 213.57687475914435,
+          "final": 517.6480144325689,
+          "delta": 304.0711396734245
+        },
+        "conversation": {
+          "best": 80.60446809092043,
+          "final": 128.13876705770394,
+          "delta": 47.53429896678351
+        },
+        "math": {
+          "best": 13.142045910223148,
+          "final": 13.142045910223148,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 116.53495974864909,
+      "avg_final_ppl": 229.65120065755804,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            6.334967466501089
+          ],
+          "time": 31.521492824999996
+        },
+        {
+          "task": "science",
+          "losses": [
+            5.92843066729032
+          ],
+          "time": 31.52188428599993
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            4.858405590057373
+          ],
+          "time": 31.557449620999932
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.0063102061931906
+          ],
+          "time": 31.51835370799995
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/all_linear_seed42"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 123,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 20688384,
+      "total_params": 3994245216,
+      "param_pct": "0.52%",
+      "baseline_ppl": {
+        "code": 4323.5703097981,
+        "science": 5365.107242599892,
+        "conversation": 3249.3379001045073,
+        "math": 1204.5906230677815
+      },
+      "ppl_matrix": [
+        {
+          "code": 4323.5703097981,
+          "science": 5365.107242599892,
+          "conversation": 3249.3379001045073,
+          "math": 1204.5906230677815
+        },
+        {
+          "code": 256.80102060418767,
+          "science": 2607.0925646321143,
+          "conversation": 852.0488426446436,
+          "math": 285.81484103930774
+        },
+        {
+          "code": 891.5212751894392,
+          "science": 287.9937380066958,
+          "conversation": 412.6732751214857,
+          "math": 195.95227843426593
+        },
+        {
+          "code": 193.03480358642724,
+          "science": 464.5043410285332,
+          "conversation": 100.91862234064018,
+          "math": 68.95368658668188
+        },
+        {
+          "code": 235.8738854792471,
+          "science": 594.1235812058632,
+          "conversation": 165.49221434317914,
+          "math": 15.514499310279144
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 193.03480358642724,
+          "final": 235.8738854792471,
+          "delta": 42.83908189281985
+        },
+        "science": {
+          "best": 287.9937380066958,
+          "final": 594.1235812058632,
+          "delta": 306.12984319916734
+        },
+        "conversation": {
+          "best": 100.91862234064018,
+          "final": 165.49221434317914,
+          "delta": 64.57359200253896
+        },
+        "math": {
+          "best": 15.514499310279144,
+          "final": 15.514499310279144,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 103.38562927363154,
+      "avg_final_ppl": 252.75104508464213,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            7.024407900296724
+          ],
+          "time": 31.522202593000202
+        },
+        {
+          "task": "science",
+          "losses": [
+            6.234400309049166
+          ],
+          "time": 31.522841667999955
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            5.132574081420898
+          ],
+          "time": 31.55600941800003
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.261914821771475
+          ],
+          "time": 31.516800256000124
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/all_linear_seed123"
+    },
+    {
+      "strategy": "all_linear",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+      "ssm_type": "mamba2",
+      "seed": 7,
+      "lora_rank": 16,
+      "num_train": 50,
+      "num_test": 20,
+      "max_len": 128,
+      "batch_size": 4,
+      "trainable_params": 20688384,
+      "total_params": 3994245216,
+      "param_pct": "0.52%",
+      "baseline_ppl": {
+        "code": 2971.6400238897318,
+        "science": 4434.203253477104,
+        "conversation": 3636.254214039251,
+        "math": 1052.095382761503
+      },
+      "ppl_matrix": [
+        {
+          "code": 2971.6400238897318,
+          "science": 4434.203253477104,
+          "conversation": 3636.254214039251,
+          "math": 1052.095382761503
+        },
+        {
+          "code": 130.52858395409052,
+          "science": 1732.5687680680041,
+          "conversation": 930.3581949147615,
+          "math": 196.29537558521983
+        },
+        {
+          "code": 541.2309770532644,
+          "science": 205.20033640791863,
+          "conversation": 331.9201208234451,
+          "math": 124.43027731094345
+        },
+        {
+          "code": 143.44032483808027,
+          "science": 462.3810912515909,
+          "conversation": 80.21423952728753,
+          "math": 49.97328825018674
+        },
+        {
+          "code": 280.5087465526712,
+          "science": 623.6749253194212,
+          "conversation": 134.17415622620592,
+          "math": 13.503523723892823
+        }
+      ],
+      "forgetting": {
+        "code": {
+          "best": 130.52858395409052,
+          "final": 280.5087465526712,
+          "delta": 149.98016259858068
+        },
+        "science": {
+          "best": 205.20033640791863,
+          "final": 623.6749253194212,
+          "delta": 418.47458891150256
+        },
+        "conversation": {
+          "best": 80.21423952728753,
+          "final": 134.17415622620592,
+          "delta": 53.95991669891839
+        },
+        "math": {
+          "best": 13.503523723892823,
+          "final": 13.503523723892823,
+          "delta": 0.0
+        }
+      },
+      "avg_forgetting": 155.60366705225042,
+      "avg_final_ppl": 262.9653379555478,
+      "train_log": [
+        {
+          "task": "code",
+          "losses": [
+            6.312907512371357
+          ],
+          "time": 31.523463813000035
+        },
+        {
+          "task": "science",
+          "losses": [
+            5.8761193202092095
+          ],
+          "time": 31.524348801000087
+        },
+        {
+          "task": "conversation",
+          "losses": [
+            4.825714276387141
+          ],
+          "time": 31.560540743000047
+        },
+        {
+          "task": "math",
+          "losses": [
+            3.0521770073817325
+          ],
+          "time": 31.520815890999984
+        }
+      ],
+      "adapter_path": "/results/smoke_nemotron_20260320_154204/adapters/all_linear_seed7"
+    }
+  ],
+  "cl_summary": {
+    "lora_attention": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 877.7390904878006,
+      "avg_final_ppl_std": 401.5023185539269,
+      "avg_forgetting_mean": 364.7992468549632,
+      "avg_forgetting_std": 271.1002414721541,
+      "param_pct": "0.04%"
+    },
+    "lora_ssm": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 290.904484165804,
+      "avg_final_ppl_std": 9.876829550918854,
+      "avg_forgetting_mean": 141.9469193129743,
+      "avg_forgetting_std": 28.442394615373065,
+      "param_pct": "0.27%"
+    },
+    "all_linear": {
+      "n_seeds": 3,
+      "avg_final_ppl_mean": 248.45586123258263,
+      "avg_final_ppl_std": 13.935431800978217,
+      "avg_forgetting_mean": 125.1747520248437,
+      "avg_forgetting_std": 22.17604376039094,
+      "param_pct": "0.52%"
+    }
+  },
+  "mmlu_results": {
+    "base": {
+      "label": "base",
+      "time": 213.1564472760001,
+      "returncode": 1,
+      "stderr_tail": "/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 774, in forward\n    hidden_states = self.mixer(\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 720, in forward\n    return self.torch_forward(hidden_states, cache_params, cache_position, attention_mask)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 655, in torch_forward\n    Y_diag = (M[..., None] * hidden_states[:, :, None]).sum(dim=3)\n              ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 24.38 GiB. GPU 0 has a total capacity of 79.18 GiB of which 21.51 GiB is free. Process 1 has 57.65 GiB memory in use. Process 1 has 57.65 GiB memory in use. Of the allocated memory 48.36 GiB is allocated by PyTorch, and 379.66 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n\nRunning loglikelihood requests:   0%|          | 0/22800 [00:13<?, ?it/s]\n"
+    },
+    "lora_attention_seed42": {
+      "label": "lora_attention_seed42",
+      "time": 149.74552646300026,
+      "returncode": 1,
+      "stderr_tail": "/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 774, in forward\n    hidden_states = self.mixer(\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 720, in forward\n    return self.torch_forward(hidden_states, cache_params, cache_position, attention_mask)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 655, in torch_forward\n    Y_diag = (M[..., None] * hidden_states[:, :, None]).sum(dim=3)\n              ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 24.38 GiB. GPU 0 has a total capacity of 79.18 GiB of which 21.51 GiB is free. Process 1 has 57.66 GiB memory in use. Process 1 has 57.66 GiB memory in use. Of the allocated memory 48.37 GiB is allocated by PyTorch, and 379.60 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n\nRunning loglikelihood requests:   0%|          | 0/22800 [00:12<?, ?it/s]\n"
+    },
+    "lora_ssm_seed42": {
+      "label": "lora_ssm_seed42",
+      "time": 148.21406846399987,
+      "returncode": 1,
+      "stderr_tail": "/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 774, in forward\n    hidden_states = self.mixer(\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 720, in forward\n    return self.torch_forward(hidden_states, cache_params, cache_position, attention_mask)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 655, in torch_forward\n    Y_diag = (M[..., None] * hidden_states[:, :, None]).sum(dim=3)\n              ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 24.38 GiB. GPU 0 has a total capacity of 79.18 GiB of which 21.47 GiB is free. Process 1 has 57.69 GiB memory in use. Process 1 has 57.69 GiB memory in use. Of the allocated memory 48.40 GiB is allocated by PyTorch, and 378.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n\nRunning loglikelihood requests:   0%|          | 0/22800 [00:11<?, ?it/s]\n"
+    },
+    "all_linear_seed42": {
+      "label": "all_linear_seed42",
+      "time": 150.36690664700018,
+      "returncode": 1,
+      "stderr_tail": "/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 774, in forward\n    hidden_states = self.mixer(\n                    ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 720, in forward\n    return self.torch_forward(hidden_states, cache_params, cache_position, attention_mask)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_4B_hyphen_BF16/dfaf35de3e30f1867dd8dbc38a7fc9fb52d3914f/modeling_nemotron_h.py\", line 655, in torch_forward\n    Y_diag = (M[..., None] * hidden_states[:, :, None]).sum(dim=3)\n              ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 24.38 GiB. GPU 0 has a total capacity of 79.18 GiB of which 21.44 GiB is free. Process 1 has 57.73 GiB memory in use. Process 1 has 57.73 GiB memory in use. Of the allocated memory 48.44 GiB is allocated by PyTorch, and 377.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n\nRunning loglikelihood requests:   0%|          | 0/22800 [00:13<?, ?it/s]\n"
+    }
+  },
+  "timestamp": "2026-03-20T21:24:42.260864+00:00"
+}

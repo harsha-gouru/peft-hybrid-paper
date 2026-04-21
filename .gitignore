@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+
+# Internal planning / status docs — kept local
+PUBLICATION_ASSESSMENT.md
+SUBMISSION_SUMMARY.md
+EXPERIMENT_STATUS.md
+ARXIV_SUBMISSION_GUIDE.md
+SUMMARY.txt
