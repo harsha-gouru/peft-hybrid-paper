@@ -1,5 +1,7 @@
 # Stop Tuning the Dynamics: LoRA Placement Determines Continual Learning Outcomes in Hybrid SSM-Attention Models
 
+![LoRA placement in hybrid SSM-attention models](assets/peft-hybrid-paper-hero.png)
+
 Research paper on where to place LoRA adapters when fine-tuning hybrid state-space-model + attention architectures (Qwen3.5, Jamba) for continual learning.
 
 **Paper:** [`main.pdf`](main.pdf) · **LaTeX source:** [`main.tex`](main.tex)
